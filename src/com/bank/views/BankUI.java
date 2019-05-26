@@ -1,13 +1,14 @@
 package com.bank.views;
 
 import com.bank.controller.Controller;
-import com.bank.model.Customer;
-import com.bank.model.LoginType;
+import com.bank.model.*;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
+import java.lang.reflect.Field;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.*;
 
 public class BankUI
 {
@@ -16,7 +17,11 @@ public class BankUI
 
     public static void main(String[] args)
     {
-        printMenus();
+        DbObject db = new DbObject();
+        List<String> col = db.getColumns("users");
+
+        System.out.println(Arrays.toString(col.toArray()));
+//        printMenus();
     }
 
     public static void printMenus()
