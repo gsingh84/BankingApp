@@ -1,5 +1,9 @@
-package com.bank.model;
+package com.bank.model.database;
 
+import com.bank.model.beans.Customer;
+import com.bank.model.beans.Employee;
+import com.bank.model.enums.AccountType;
+import com.bank.model.beans.PersonalInfo;
 import javafx.util.Pair;
 
 import java.util.HashMap;
@@ -7,14 +11,14 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-public class Database
+public class DatabaseOld
 {
     private List<Customer> customers;
     private List<Employee> employees;
 
-    private Map<String, Pair<String, LoginType>> accounts;
+    private Map<String, Pair<String, AccountType>> accounts;
 
-    public Database()
+    public DatabaseOld()
     {
         customers = new LinkedList<>();
         employees = new LinkedList<>();
@@ -30,8 +34,8 @@ public class Database
         {
             PersonalInfo info = new PersonalInfo("", "", email, null);
             info.setPassword("passw01");
-            accounts.put(email, new Pair<>(info.getPassword(), LoginType.EMPLOYEE));
-            employees.add(new Employee(info));
+            accounts.put(email, new Pair<>(info.getPassword(), AccountType.EMPLOYEE));
+            employees.add(new Employee(info, null));
         }
     }
 
@@ -39,7 +43,7 @@ public class Database
     {
         customers.add(customer);
         PersonalInfo info = customer.getCustomer();
-        accounts.put(info.getEmail(), new Pair<>(info.getPassword(), LoginType.CUSTOMER));
+        accounts.put(info.getEmail(), new Pair<>(info.getPassword(), AccountType.CUSTOMER));
     }
 
     public boolean isValidAccount(String email, String password)
@@ -48,10 +52,10 @@ public class Database
         return accounts.containsKey(email) && obj.getKey().equals(password);
     }
 
-    public LoginType getLoginType(String email)
+    public AccountType getLoginType(String email)
     {
         Pair obj = accounts.get(email);
-        return (LoginType) obj.getValue();
+        return (AccountType) obj.getValue();
     }
 
     public List<Customer> getCustomers()

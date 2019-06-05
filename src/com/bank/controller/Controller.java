@@ -1,8 +1,8 @@
 package com.bank.controller;
 
-import com.bank.model.Customer;
+import com.bank.model.beans.Customer;
 import com.bank.model.HandleAccounts;
-import com.bank.model.LoginType;
+import com.bank.model.enums.AccountType;
 
 import java.util.List;
 import java.util.Map;
@@ -21,7 +21,7 @@ public class Controller
         return bank.login(email, password);
     }
 
-    public LoginType getLoginType()
+    public AccountType getLoginType()
     {
         return bank.getAccountType();
     }

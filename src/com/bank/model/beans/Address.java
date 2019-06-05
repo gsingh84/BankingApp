@@ -1,7 +1,8 @@
-package com.bank.model;
+package com.bank.model.beans;
 
 public class Address
 {
+    private int customerId;
     private String street;
     private String city;
     private String state;
@@ -13,6 +14,20 @@ public class Address
         this.city = city;
         this.state = state;
         this.zip = zip;
+    }
+
+    public Address()
+    {
+    }
+
+    public void setCustomerId(int customerId)
+    {
+        this.customerId = customerId;
+    }
+
+    public int getCustomerId()
+    {
+        return customerId;
     }
 
     public String getStreet()

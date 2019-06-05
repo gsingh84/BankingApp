@@ -1,4 +1,4 @@
-package com.bank.model;
+package com.bank.model.database;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -12,11 +12,8 @@ public class ConnectionConfig
 {
     private static Connection conn = null;
 
-
-
     public static Connection getConnection()
     {
-
         try
         {
             List<String> config = readFile();

@@ -1,20 +1,34 @@
-package com.bank.model;
+package com.bank.model.beans;
+
+import com.bank.model.enums.AccountType;
+
+import java.sql.Date;
 
 public class PersonalInfo
 {
     private int id;
     private String firstName;
     private String lastName;
+    private Date birthDate;
     private String email;
     private String password;
-    private Address address;
+    private AccountType userType;
 
-    public PersonalInfo(String firstName, String lastName, String email, Address address)
+    public PersonalInfo(String firstName, String lastName, String email, Date birthDate)
     {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.address = address;
+        this.birthDate = birthDate;
+    }
+
+    public PersonalInfo()
+    {
+    }
+
+    public void setUserType(AccountType userType)
+    {
+        this.userType = userType;
     }
 
     public void setPassword(String password)
@@ -37,6 +51,11 @@ public class PersonalInfo
         return lastName;
     }
 
+    public Date getBirthDate()
+    {
+        return birthDate;
+    }
+
     public String getEmail()
     {
         return email;
@@ -47,10 +66,15 @@ public class PersonalInfo
         return password;
     }
 
+    public AccountType getUserType()
+    {
+        return userType;
+    }
+
     @Override
     public String toString()
     {
         return firstName + " " + lastName + "\n"
-                + email + "\n" + address.toString();
+                + email + "\n" + birthDate;
     }
 }

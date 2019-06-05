@@ -1,13 +1,11 @@
 package com.bank.views;
 
 import com.bank.controller.Controller;
-import com.bank.model.*;
+import com.bank.model.beans.Customer;
+import com.bank.model.beans.PersonalInfo;
+import com.bank.model.database.DbObject;
+import com.bank.model.enums.AccountType;
 
-import java.lang.reflect.Field;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
 import java.util.*;
 
 public class BankUI
@@ -17,10 +15,25 @@ public class BankUI
 
     public static void main(String[] args)
     {
-        DbObject db = new DbObject();
-        List<String> col = db.getColumns("users");
+//        Map<String, String> map = new HashMap<>();
+//        map.put("firstName", "Jazz");
+//        map.put("lastName", "B");
+//        map.put("birthdate", "1988-09-09");
+//        map.put("email", "jazz@gmail.com");
+//        map.put("street", "12344 12th pl");
+//        map.put("cityState", "Renton,WA");
+//        map.put("zip", "24552");
+//
+//        controller.createCustomer(map);
 
-        System.out.println(Arrays.toString(col.toArray()));
+
+//        DbObject db = new DbObject();
+
+//        db.isValidAccount("sam@gmail.com", "password01");
+//        map.put("id", "1");
+//        map.put("lastname", "Josh");
+//        db.select("users", map);
+//        db.deserialize();
 //        printMenus();
     }
 
@@ -58,7 +71,7 @@ public class BankUI
             }
         }
 
-        if (controller.getLoginType().equals(LoginType.EMPLOYEE))
+        if (controller.getLoginType().equals(AccountType.EMPLOYEE))
         {
             printEmployeeMenu();
         }
@@ -136,6 +149,10 @@ public class BankUI
         System.out.println("Last name: ");
         String lastName = console.nextLine();
         data.put("lastName", lastName);
+
+        System.out.println("Birth Date: ");
+        String birthDate = console.nextLine();
+        data.put("birthdate", birthDate);
 
         System.out.println("Email: ");
         String newEmail = console.nextLine();
