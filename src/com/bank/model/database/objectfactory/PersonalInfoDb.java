@@ -9,7 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class PersonalInfoDb implements IExecute
+public class PersonalInfoDb implements IObject
 {
     @Override
     public int insert(PreparedStatement psmt, Object object) throws SQLException

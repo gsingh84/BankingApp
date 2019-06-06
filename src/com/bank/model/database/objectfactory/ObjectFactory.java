@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class ObjectFactory
 {
-    private Map<String, IExecute> instances;
+    private Map<String, IObject> instances;
 
     public ObjectFactory()
     {
@@ -19,13 +19,13 @@ public class ObjectFactory
 
     public int insertObject(PreparedStatement psmt, Object object) throws SQLException
     {
-        IExecute obj = instances.get(object.getClass().getSimpleName());
+        IObject obj = instances.get(object.getClass().getSimpleName());
         return obj.insert(psmt, object);
     }
 
     public Object fetch(ResultSet resultSet, Object object) throws SQLException
     {
-        IExecute obj = instances.get(object.getClass().getSimpleName());
+        IObject obj = instances.get(object.getClass().getSimpleName());
         return obj.fetch(resultSet);
     }
 }

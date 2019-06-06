@@ -2,9 +2,9 @@ package com.bank.views;
 
 import com.bank.controller.Controller;
 import com.bank.model.beans.Customer;
-import com.bank.model.beans.PersonalInfo;
-import com.bank.model.database.DbObject;
+import com.bank.model.database.ConnectionConfig;
 import com.bank.model.enums.AccountType;
+import external.BatchProcessor;
 
 import java.util.*;
 
@@ -15,26 +15,9 @@ public class BankUI
 
     public static void main(String[] args)
     {
-//        Map<String, String> map = new HashMap<>();
-//        map.put("firstName", "Jazz");
-//        map.put("lastName", "B");
-//        map.put("birthdate", "1988-09-09");
-//        map.put("email", "jazz@gmail.com");
-//        map.put("street", "12344 12th pl");
-//        map.put("cityState", "Renton,WA");
-//        map.put("zip", "24552");
-//
-//        controller.createCustomer(map);
-
-
-//        DbObject db = new DbObject();
-
-//        db.isValidAccount("sam@gmail.com", "password01");
-//        map.put("id", "1");
-//        map.put("lastname", "Josh");
-//        db.select("users", map);
-//        db.deserialize();
-//        printMenus();
+        BatchProcessor processor = new BatchProcessor();
+        processor.readXml();
+        ConnectionConfig.closeConnection();
     }
 
     public static void printMenus()

@@ -1,13 +1,12 @@
 package com.bank.model.database.objectfactory;
 
 import com.bank.model.beans.Address;
-import com.bank.model.database.objectfactory.IExecute;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class AddressDb implements IExecute
+public class AddressDb implements IObject
 {
     @Override
     public int insert(PreparedStatement psmt, Object object) throws SQLException
