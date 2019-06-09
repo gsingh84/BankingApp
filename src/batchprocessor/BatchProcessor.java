@@ -1,4 +1,4 @@
-package external;
+package batchprocessor;
 
 import com.bank.model.database.Database;
 
@@ -24,7 +24,7 @@ public class BatchProcessor
         try (WatchService service = FileSystems.getDefault().newWatchService())
         {
             Map<WatchKey, Path> map = new HashMap<>();
-            Path path = Paths.get("resources/external");
+            Path path = Paths.get("resources/batchprocessor");
 
             map.put(path.register(service, StandardWatchEventKinds.ENTRY_CREATE,
                     StandardWatchEventKinds.ENTRY_DELETE, StandardWatchEventKinds.ENTRY_MODIFY),

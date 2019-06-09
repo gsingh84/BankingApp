@@ -2,9 +2,8 @@ package com.bank.views;
 
 import com.bank.controller.Controller;
 import com.bank.model.beans.Customer;
-import com.bank.model.database.ConnectionConfig;
 import com.bank.model.enums.AccountType;
-import external.BatchProcessor;
+import batchprocessor.BatchProcessor;
 
 import java.util.*;
 

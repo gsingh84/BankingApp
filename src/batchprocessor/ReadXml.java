@@ -1,4 +1,4 @@
-package external;
+package batchprocessor;
 
 import com.bank.model.HandleAccounts;
 import com.bank.model.beans.Account;
@@ -34,7 +34,7 @@ public class ReadXml implements Runnable
 
     private void readXml()
     {
-        File file = new File("resources/external/" + filename);
+        File file = new File("resources/batchprocessor/" + filename);
         DocumentBuilderFactory dcBuilderFac = DocumentBuilderFactory.newInstance();
 
         try
@@ -44,7 +44,7 @@ public class ReadXml implements Runnable
 
             NodeList list = doc.getElementsByTagName("Account");
 
-            addToDb(list);
+//            addToDb(list);
             boolean delete = file.delete();
         } catch (Exception e)
         {

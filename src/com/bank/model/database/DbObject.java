@@ -3,7 +3,6 @@ package com.bank.model.database;
 import com.bank.model.beans.Address;
 import com.bank.model.beans.Customer;
 import com.bank.model.beans.PersonalInfo;
-import com.bank.model.database.objectfactory.ObjectFactory;
 import com.bank.model.enums.AccountType;
 
 import java.io.UnsupportedEncodingException;
