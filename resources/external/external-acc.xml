@@ -1,0 +1,69 @@
+<AccountDet>
+	<Account>
+		<AccountNum>3413123498</AccountNum>
+		<AccType>CHECKING</AccType>
+		<Bank>Chase</Bank>
+		<CustomerDetails>
+			<Firstname>Alex</Firstname>
+			<Lastname>Bose</Lastname>
+			<Birthdate>1993-04-19</Birthdate>
+			<Address>
+				<Street>1234 12th</Street>
+				<City>Renton</City>
+				<State>WA</State>
+				<Zip>98034</Zip>
+			</Address>
+		</CustomerDetails>
+	</Account>
+
+	<Account>
+		<AccountNum>6625297376</AccountNum>
+		<AccType>SAVINGS</AccType>
+		<Bank>Bank of America</Bank>
+		<CustomerDetails>
+			<Firstname>Jarod</Firstname>
+			<Lastname>Ostrnader</Lastname>
+			<Birthdate>1990-03-09</Birthdate>
+			<Address>
+				<Street>3562 13th</Street>
+				<City>Auburn</City>
+				<State>Oregon</State>
+				<Zip>78663</Zip>
+			</Address>
+		</CustomerDetails>
+	</Account>
+
+	<Account>
+		<AccountNum>4572528764</AccountNum>
+		<AccType>CHECKING</AccType>
+		<Bank>Wells Fargo</Bank>
+		<CustomerDetails>
+			<Firstname>Zachry</Firstname>
+			<Lastname>Harnendez</Lastname>
+			<Birthdate>1995-09-23</Birthdate>
+			<Address>
+				<Street>6672 10th</Street>
+				<City>Kent</City>
+				<State>CA</State>
+				<Zip>46728</Zip>
+			</Address>
+		</CustomerDetails>
+	</Account>
+
+	<Account>
+		<AccountNum>64789263534</AccountNum>
+		<AccType>CHECKING</AccType>
+		<Bank>Columbia</Bank>
+		<CustomerDetails>
+			<Firstname>Jean</Firstname>
+			<Lastname>Martin</Lastname>
+			<Birthdate>1987-01-01</Birthdate>
+			<Address>
+				<Street>6822 37th</Street>
+				<City>Bellevue</City>
+				<State>WA</State>
+				<Zip>98363</Zip>
+			</Address>
+		</CustomerDetails>
+	</Account>
+</AccountDet>

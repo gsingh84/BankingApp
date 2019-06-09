@@ -16,8 +16,9 @@ public class BankUI
     public static void main(String[] args)
     {
         BatchProcessor processor = new BatchProcessor();
-        processor.readXml();
-        ConnectionConfig.closeConnection();
+        processor.monitorDir();
+//        processor.readXml();
+//        ConnectionConfig.closeConnection();
     }
 
     public static void printMenus()
